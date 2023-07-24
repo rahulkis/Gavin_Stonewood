@@ -1,0 +1,2 @@
+2023-05-04T22:11:31+00:00 INFO Webhook notification received: Event: payment_intent.succeeded
+2023-05-04T22:11:31+00:00 INFO Webhook notification received: Event: charge.succeeded

@@ -1,0 +1,180 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+.wsp_preview {
+	clear: both;
+	max-width: 100%;
+	border: 1px solid #ccc;
+	display: inline-block;
+}
+.wsp_cho_title {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 18px;
+	padding: 10px 18px;
+	display: table;
+	width: 100%;
+}
+
+.woocommerce form .form-row .wsp_cho_title label, .wsp_cho_title label {
+	padding-left: 10px;
+	display: table-cell;
+}
+.wsp_cho_content {
+	display: flex;
+}
+#wsp_cho_content {
+	margin-bottom: 18px;
+}
+.wsp_c_content_cover {
+	flex-grow: 1;
+	margin-bottom: 18px;
+}
+.wsp_c_img_cover {
+	flex-shrink: 1;
+	margin-right: 18px;
+	width: 100px;
+	max-width: 100px;
+}
+.wsp_cho_content img {
+	width: 100px;
+	max-width: 100px !important;
+}
+.wsp_cho_price {
+	padding-top: 15px;
+	border-top: 1px solid #ccc;
+}
+.wsp_cho_price span {
+	font-weight: bold;
+}
+.wsp_cho_content {
+	padding: 0 18px;
+}
+
+/* product page */
+.wsp_fbt_cover {
+	clear: both;
+	width: 100%;
+	display: block;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+div.wsp_fbt_images_s {
+	list-style: none;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 50px 0 0;
+	text-align: center;
+}
+div.wsp_fbt_images_s img {
+	margin-bottom: 15px;
+	display: inline-block;
+}
+div.wsp_fbt_images_s:after {
+	content: '+';
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 15px;
+	width: 15px;
+	text-align: center;
+}
+.wsp_fbt_images_s a {
+	clear: both;
+	display: block;
+	text-decoration: none;
+	font-size: 16px;
+}
+div.wsp_fbt_images_s:nth-last-child(2):after {
+	content: '=';
+}
+div.wsp_fbt_images_s:last-child:after {
+	content: '';
+}
+.wsp_fbt_total {
+	font-size: 15px;
+	line-height: 20px;
+	display: block;
+}
+input[type="submit"].wsp_button {
+	font-size: 15px;
+	line-height: 20px;
+	padding: 5px 15px;
+}
+div.wsp_fbt_images_s.wsp_fbt_box {
+	text-align: center;
+	padding: 30px;
+	margin-left: 15px;
+	vertical-align: top;
+}
+.wsp_fbt_total, .wsp_fbt_total_save {
+	padding-bottom: 7px;
+}
+h2.wsp_fbt_head {
+	margin-bottom: 15px;
+	font-size: 20px;
+	font-weight: normal;
+}
+.wsp_p_remove {
+	text-align: center;
+}
+.wsp_fbt_product_list {
+	margin-left: 0;
+	list-style: none;
+	margin-top: 20px;
+}
+.wsp_fbt_product_list li {
+	margin-bottom: 15px;
+	padding: 0;
+}
+.wsp_button.disabled {
+	opacity: 0.5;
+}
+.woocommerce a.remove.wsp_p_remove {
+	display: inline-block;
+	margin-right: 5px;
+}
+#wsp_c_check {
+	vertical-align: middle;
+}
+.wsp_cho_title label {
+	display: table-cell;
+}
+#wsp_c_check.disabled {
+	opacity: 0.5;
+}
+.wsp_fbt_product_list_li {
+	margin: 0 0 25px 0;
+	line-height: 17px;
+	display: list-item;
+}
+.wsp_fbt_product_list_2 .wsp_fbt_product_list_li {
+	margin: 0 0 12px 0;
+}
+.wsp_price_cover {
+	margin: 10px 0;
+}
+input.wsp_cho_button {
+	margin: 15px 0 0;
+	padding: 12px 0;
+	border: none;
+}
+@media only screen and (max-width: 768px) {
+	.woocommerce-cart .wsp_preview {
+		width: 100%;
+	}	
+}
+@media only screen and (max-width: 640px) {
+	div.wsp_fbt_images_s.wsp_fbt_box {
+		margin-left: 0;
+	}
+	div.wsp_fbt_images_s {
+		padding: 0 24px 0 0;
+	}
+	div.wsp_fbt_images_s:after {
+		right: 2px;
+	}
+}

@@ -1,0 +1,177 @@
+<?php
+/**
+ * Provide a public-facing view for the plugin
+ *
+ * This file is used to markup the public-facing aspects of the plugin.
+ *
+ * @link       #
+ * @since      1.0.0
+ *
+ * @package    WC_Sales_Up
+ * @subpackage WC_Sales_Up/public/partials
+ */
+
+?>
+
+<div class="wsp_fbt_cover wsp_<?php echo esc_attr( $wsp_pro_design ); ?>">
+	<h2 class="wsp_fbt_head">
+		<?php echo isset( $wsp_on_product_data['offer_title'] ) ? esc_html( $wsp_on_product_data['offer_title'] ) : esc_html__( 'Frequently Bought Together', 'wc-sales-up' ); ?>
+	</h2>
+	<div class="wsp_fbt_content">
+		<form method="post" name="fbq_product_form" class="fbq_product_form">
+			<input type="hidden" id="fbq_main_product" name="fbq_main_product" value="<?php echo esc_attr( $product->get_id() ); ?>" />
+			<?php 
+			if($product->is_type('variable')) {
+				?>
+				<input type="hidden" id="fbq_variable_product" name="fbq_variable_product" value="" />
+				<?php
+			}
+			?>
+			<div class="wsp_fbt_images wsp_fbt_product_list">
+				<?php
+				$i = 0;
+				foreach ( $wps_products as $wps_product ) {
+					?>
+					<div class="wsp_fbt_images_s wsp_fbt_product_list_li">
+						<img src="<?php echo esc_url( wsp_get_small_image_from_id( $wps_product->get_image_id() ) ); ?>" alt="<?php echo esc_attr( $wps_product->get_title() ); ?>" />
+						<?php
+						if ( 'layout-1' == $wsp_pro_design ) {
+							?>
+							<input class="fbq_products" type="hidden" value="<?php echo esc_attr( $wps_product->get_id() ); ?>" name="fbq_products[]" />
+							<div class="wsp_title_cover">
+							<?php
+							if ( '' != $link ) {
+								?>
+								<a href="<?php echo esc_url( get_the_permalink( $wps_product->get_id() ) ); ?>">
+								<?php
+							}
+							echo esc_html( $wps_product->get_title() );
+							if ( '' != $link ) {
+								?>
+							</a>
+							<?php } ?>
+							</div>
+							<div class="wsp_price_cover">
+								<span class="wsp_price_inr"><?php echo wp_kses( wc_price( $wps_product->get_price() ), wsp_args_kses() ); ?></span>
+							</div>
+							<?php
+							if ( $wps_product->is_type( 'variable' ) ) {
+								$available_variations = WC_Sales_Up_Product::get_variations_from_product( $wps_product );
+								if ( is_array( $available_variations ) && ! empty( $available_variations ) ) {
+									?>
+									<select name="wsp_attribute_<?php echo esc_attr( $wps_product->get_id() ); ?>" class="wsp_attribute_select wsp_attribute_<?php echo esc_attr( $wps_product->get_id() ); ?>">
+										<option disabled='disabled' selected='selected' value=''>
+											<?php echo esc_html( WC_Sales_Up_Product::get_attribute_placeholder( $wps_product ) ); ?>
+										</option>
+										<?php
+										foreach ( $available_variations as $available_variation ) {
+											$option_attributes = array();
+											foreach ( $available_variation['attributes'] as $attribute_key => $attribute_value ) {
+												$option_attributes[] = $attribute_value;
+											}
+											$option_string = implode( ' - ', $option_attributes );
+											?>
+												<option
+													value='<?php echo esc_attr( $available_variation['variation_id'] ); ?>'
+													data-attributes="<?php echo esc_attr( wp_json_encode( $available_variation['attributes'] ) ); ?>">
+												<?php echo esc_attr( $option_string ); ?>
+												</option>
+												<?php
+										}
+										?>
+									</select>
+									<?php
+								}
+								?>
+								<input type="hidden" id="wsp_variable_<?php echo esc_attr( $wps_product->get_id() ); ?>" class="wsp_variation_id wsp_variable_<?php echo esc_attr( $wps_product->get_id() ); ?>" name="wsp_variable_<?php echo esc_attr( $wps_product->get_id() ); ?>" value="" />
+								<?php
+							}
+						}
+						?>
+					</div>
+					<?php
+					$i++;
+				}
+				?>
+				<div class="wsp_fbt_images_s wsp_fbt_box">
+				<?php
+				if ( $total_original_price_f == $discounted_price_f ) {
+					?>
+					<div class="wsp_fbt_total"><span class="wsp_d_price"><?php echo esc_html( $discounted_price_f ); ?></span></div>
+					<?php
+				} else {
+					?>
+					<div class="wsp_fbt_total"><del><?php echo wp_kses( $total_original_price_f, wsp_args_kses() ); ?></del><span class="wsp_d_price"><?php echo wp_kses( $discounted_price_f, wsp_args_kses() ); ?></span></div>
+					<div class="wsp_fbt_total_save"><?php esc_html_e( 'You save', 'wc-sales-up' ); ?> <span><?php echo wp_kses( $discount_f, wsp_args_kses() ); ?></span></div>
+					<?php
+				}
+				?>
+					<input id="wsp_fbt_add_to_cart" type="submit" class="wsp_button <?php echo esc_attr( $enable_ajax_class ); ?>" name="wsp_fbt_add_to_cart" value="<?php esc_attr_e( 'All Add To Cart', 'wc-sales-up' ); ?>" />
+				</div>
+			</div>
+			<?php
+			if ( 'layout-2' == $wsp_pro_design ) {
+				?>
+				<div class="wsp_fbt_product_list wsp_fbt_product_list_2">
+				<?php
+				foreach ( $wps_products as $wps_product ) {
+					?>
+					<div class="wsp_fbt_product_list_li">
+						<input class="fbq_products" type="hidden" value="<?php echo esc_attr( $wps_product->get_id() ); ?>" name="fbq_products[]" />
+						<?php
+						if ( '' != $link ) {
+							?>
+							<a href="<?php echo esc_url( get_the_permalink( $wps_product->get_id() ) ); ?>">
+							<?php
+						}
+						echo esc_html( $wps_product->get_title() );
+						if ( '' != $link ) {
+							?>
+						</a>
+						<?php } ?>
+						- <span class="wsp_price_inr"><?php echo wp_kses( wc_price( $wps_product->get_price() ), wsp_args_kses() ); ?></span>
+						<?php
+						if ( $wps_product->is_type( 'variable' ) ) {
+							$available_variations = WC_Sales_Up_Product::get_variations_from_product( $wps_product );
+							if ( is_array( $available_variations ) && ! empty( $available_variations ) ) {
+								?>
+								<select name="wsp_attribute_<?php echo esc_attr( $wps_product->get_id() ); ?>" class="wsp_attribute_select wsp_attribute_<?php echo esc_attr( $wps_product->get_id() ); ?>">
+									<option disabled='disabled' selected='selected' value=''>
+										<?php echo esc_html( WC_Sales_Up_Product::get_attribute_placeholder( $wps_product ) ); ?>
+									</option>
+									<?php
+									foreach ( $available_variations as $available_variation ) {
+										$option_attributes = array();
+										foreach ( $available_variation['attributes'] as $attribute_key => $attribute_value ) {
+											$option_attributes[] = $attribute_value;
+										}
+										$option_string = implode( ' - ', $option_attributes );
+										?>
+											<option
+												value='<?php echo esc_attr( $available_variation['variation_id'] ); ?>'
+												data-attributes="<?php echo esc_attr( wp_json_encode( $available_variation['attributes'] ) ); ?>">
+											<?php echo esc_attr( $option_string ); ?>
+											</option>
+											<?php
+									}
+									?>
+								</select>
+								<?php
+							}
+							?>
+							<input type="hidden" id="wsp_variable_<?php echo esc_attr( $wps_product->get_id() ); ?>" class="wsp_variation_id wsp_variable_<?php echo esc_attr( $wps_product->get_id() ); ?>" name="wsp_variable_<?php echo esc_attr( $wps_product->get_id() ); ?>" value="" />
+							<?php
+						}
+						?>
+					</div>
+					<?php
+				}
+				?>
+			</div>
+				<?php
+			}
+			?>
+			<input type="hidden" name="wsp_nonce" value="<?php echo esc_attr( wp_create_nonce( 'wsp_nonce' ) ); ?>" />
+		</form>        
+	</div>
+</div>

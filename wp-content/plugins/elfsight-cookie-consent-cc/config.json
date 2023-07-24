@@ -1,0 +1,443 @@
+{
+	"observerUrl": "./preview/dist/cookie-consent-observer.js",
+	"preferences": {
+		"previewUpdateTimeout": 0
+	},
+	"settings": {
+		"tabs": [
+			{
+				"id": "content",
+				"name": "Content",
+				"active": true
+			},
+			{
+				"id": "layout",
+				"name": "Layout"
+			},
+			{
+				"id": "style",
+				"name": "Style"
+			}
+		],
+		"properties": [
+			{
+				"id": "complianceType",
+				"name": "Compliance Type",
+				"description": "Set the cookie compliance type you need - informing users about cookies, or opting into cookies. Please, keep in mind that if you select opting, you will need to disable cookies on your site depending on the user choice.",
+				"tab": "content",
+				"type": "radio",
+				"radio": {
+					"options": [
+						{
+							"value": "cookies",
+							"name": "Just tell users that you use cookies"
+						},
+						{
+							"value": "ask",
+							"name": "Ask users to opt into cookies"
+						}
+					]
+				},
+				"defaultValue": "cookies"
+			},
+			{
+				"id": "lang",
+				"name": "Language",
+				"description": "Choose your language.",
+				"caption": "Choose your language. If your language is missing, or if the messages are translated wrong, please let us know. Also you can edit all the texts in the widget yourself.",
+				"tab": "content",
+				"type": "select",
+				"select": {
+					"options": [
+						{
+							"value": "en",
+							"name": "English"
+						},
+						{
+							"value": "bg",
+							"name": "Български - Bulgarian"
+						},
+						{
+							"value": "cz",
+							"name": "Čeština - Czech"
+						},
+						{
+							"value": "dk",
+							"name": "Dansk - Danish"
+						},
+						{
+							"value": "nl",
+							"name": "Nederlands - Dutch"
+						},
+						{
+							"value": "ee",
+							"name": "Eesti keel - Estonian"
+						},
+						{
+							"value": "fi",
+							"name": "Suomi - Finnish"
+						},
+						{
+							"value": "fr",
+							"name": "Français - French"
+						},
+						{
+							"value": "de",
+							"name": "Deutsch - German"
+						},
+						{
+							"value": "gr",
+							"name": "Ελληνικά - Greek"
+						},
+						{
+							"value": "hu",
+							"name": "Magyar - Hungarian"
+						},
+						{
+							"value": "ie",
+							"name": "Gaeilge - Irish"
+						},
+						{
+							"value": "it",
+							"name": "Italiano - Italian"
+						},
+						{
+							"value": "lv",
+							"name": "Latviešu valoda - Latvian"
+						},
+						{
+							"value": "lt",
+							"name": "Lietùvių kalbà - Lithuanian"
+						},
+						{
+							"value": "lu",
+							"name": "Lëtzebuergesch - Luxembourgish"
+						},
+						{
+							"value": "pl",
+							"name": "Polski - Polish"
+						},
+						{
+							"value": "pt",
+							"name": "Português - Portuguese"
+						},
+						{
+							"value": "sk",
+							"name": "Slovenský - Slovak"
+						},
+						{
+							"value": "es",
+							"name": "Español - Spanish"
+						},
+						{
+							"value": "se",
+							"name": "Svenska - Swedish"
+						}
+					]
+				},
+				"defaultValue": "en"
+			},
+			{
+				"id": "messageSubgroup",
+				"name": "Message",
+				"description": "Set the cookie consent message to be displayed to your visitors.",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "message",
+							"name": "Message",
+							"description": "",
+							"type": "textarea",
+							"defaultValue": "We use cookie to improve your experience on our site. By using our site you consent cookies.",
+							"textarea": {
+								"enableRichEdit": true,
+								"enableRichEditHtml": true
+							}
+						}
+					]
+				}
+			},
+			{
+				"id": "policySubgroup",
+				"name": "Policy",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"type": "static-html",
+							"name": "",
+							"staticHtml": {
+								"content": "<div style=\"font-size:13px;\">You can add a link to your Cookie Policy to your widget after the cookie consent message.</div>"
+							}
+						},
+						{
+							"id": "policyType",
+							"name": "Policy Display",
+							"description": "Please select how you'd like to display your policy.",
+							"type": "radio",
+							"radio": {
+								"options": [
+									{
+										"value": "link",
+										"name": "Link to your own policy"
+									},
+									{
+										"value": "none",
+										"name": "Don’t show policy link"
+									}
+								]
+							},
+							"defaultValue": "link"
+						},
+						{
+							"id": "policyUrl",
+							"name": "Your Policy URL",
+							"description": "Enter your policy URL.",
+							"type": "text",
+							"allowEmpty": true,
+							"defaultValue": "https://elfsight.com"
+						},
+						{
+							"id": "policyLinkText",
+							"name": "Policy Link Text",
+							"description": "Set the policy link text.",
+							"type": "text",
+							"defaultValue": "Learn more"
+						}
+					]
+				}
+			},
+			{
+				"id": "confirmationButton",
+				"name": "Confirmation Button",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "showConfirmationButton",
+							"name": "Show Confirmation Button",
+							"description": "Show/Hide confirmation button. Selecting hide will add the closing icon to the widget, to let visitors close the window.",
+							"type": "toggle",
+							"defaultValue": true
+						},
+						{
+							"id": "confirmationButtonText",
+							"name": "Confirmation Button Text",
+							"description": "Enter confirmation button text.",
+							"type": "text",
+							"defaultValue": "OK"
+						}
+					]
+				}
+			},
+			{
+				"id": "optButtonsSubgroup",
+				"name": "Buttons",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "allowButtonText",
+							"name": "Allow Button Text",
+							"description": "Enter allow cookie button text.",
+							"type": "text",
+							"defaultValue": "Allow Cookies"
+						},
+						{
+							"id": "declineButtonText",
+							"name": "Decline Button Text",
+							"description": "Enter decline button text.",
+							"type": "text",
+							"defaultValue": "Decline"
+						}
+					]
+				}
+			},
+			{
+				"id": "cookieIconSubgroup",
+				"name": "Cookie Icon",
+				"tab": "content",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "showCookieIcon",
+							"name": "Show Cookie Icon",
+							"description": "Show/Hide cookie icon.",
+							"type": "toggle",
+							"defaultValue": false
+						},
+						{
+							"id": "cookieIconType",
+							"name": "Icon Type",
+							"type": "select-inline",
+							"selectInline": {
+								"options": [
+									{
+										"value": "default",
+										"name": "Default"
+									},
+									{
+										"value": "custom",
+										"name": "Custom"
+									}
+								]
+							},
+							"defaultValue": "default"
+						},
+						{
+							"id": "cookieIconCustom",
+							"name": "Custom Icon",
+							"description": "",
+							"type": "file",
+							"file": {
+								"old": false,
+								"accept": "image/*",
+								"tabs": [
+									{
+										"name": "Upload File",
+										"value": "upload"
+									},
+									{
+										"name": "Recently Uploaded",
+										"value": "files"
+									},
+									{
+										"name": "Picture URL",
+										"value": "link"
+									}
+								]
+							},
+							"defaultValue": null,
+							"allowEmpty": true
+						}
+					]
+				}
+			},
+			{
+				"id": "layout",
+				"name": "Layout",
+				"description": "Choose how you'd like to display your cookie consent window - as a bar or as a box.",
+				"tab": "layout",
+				"type": "select-visual",
+				"select": {
+					"options": [
+						{
+							"value": "topBanner",
+							"name": "Top Banner",
+							"img": "https://elfsight.com/assets/cookie-consent/icons/top-banner.png"
+						},
+						{
+							"value": "bottomBanner",
+							"name": "Bottom Banner",
+							"img": "https://elfsight.com/assets/cookie-consent/icons/bottom-banner.png"
+						},
+						{
+							"value": "leftFloatingBox",
+							"name": "Left Floating Box",
+							"img": "https://elfsight.com/assets/cookie-consent/icons/left-floating-box.png"
+						},
+						{
+							"value": "centerFloatingBox",
+							"name": "Center Floating Box",
+							"img": "https://elfsight.com/assets/cookie-consent/icons/bottom-floating-box.png"
+						},
+						{
+							"value": "rightFloatingBox",
+							"name": "Right Floating Box",
+							"img": "https://elfsight.com/assets/cookie-consent/icons/right-floating-box.png"
+						}
+					]
+				},
+				"defaultValue": "topBanner"
+			},
+			{
+				"id": "colorsSubgroup",
+				"name": "Colors",
+				"tab": "style",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "backgroundColor",
+							"name": "Background Color",
+							"description": "Set the background color.",
+							"type": "color",
+							"allowEmpty": true,
+							"defaultValue": "rgb(37, 37, 40)"
+						},
+						{
+							"id": "textColor",
+							"name": "Text Color",
+							"description": "Set the text color.",
+							"type": "color",
+							"allowEmpty": true,
+							"defaultValue": "rgb(255, 255, 255)"
+						},
+						{
+							"id": "linkColor",
+							"name": "Link Color",
+							"description": "Set the link color.",
+							"type": "color",
+							"allowEmpty": true,
+							"defaultValue": "rgb(255, 255, 255)"
+						},
+						{
+							"id": "confirmationButtonColor",
+							"name": "Confirmation Button Color",
+							"description": "Set the confirmation button color.",
+							"type": "color",
+							"allowEmpty": true,
+							"defaultValue": "rgb(255, 255, 255)"
+						},
+						{
+							"id": "allowButtonColor",
+							"name": "Allow Button Color",
+							"description": "Set the allow button color.",
+							"type": "color",
+							"allowEmpty": true,
+							"defaultValue": "rgb(255, 255, 255)"
+						},
+						{
+							"id": "declineButtonColor",
+							"name": "Decline Button Color",
+							"description": "Set the decline button color.",
+							"type": "color",
+							"allowEmpty": true,
+							"defaultValue": "rgb(255, 255, 255)"
+						}
+					]
+				}
+			},
+			{
+				"id": "fontsSubgroup",
+				"name": "Fonts",
+				"tab": "style",
+				"type": "subgroup",
+				"subgroup": {
+					"properties": [
+						{
+							"id": "textFontSize",
+							"name": "Text Font Size (px)",
+							"description": "Set the text font size in pixels.",
+							"type": "slider",
+							"slider": {
+								"minLimit": 10,
+								"maxLimit": 20,
+								"floor": 10,
+								"ceil": 20,
+								"step": 1
+							},
+							"defaultValue": 13
+						}
+					]
+				}
+			}
+		]
+	}
+}

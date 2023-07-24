@@ -1,0 +1,546 @@
+/**/
+/* main styles */
+/**/
+.wsp-in {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	font-size: 0;
+	text-align: left;
+}
+.wsp-in > label {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.1s;
+	-o-transition: all 0.1s;
+	-ms-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+.wsp-in > label.active {
+	background: #fff;
+}
+.wsp-in > ul {
+	list-style: none;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	font-size: 13px;
+}
+.wsp-in > ul > li {
+	width: 100%;
+	overflow: auto;
+	padding: 10px 40px 10px 40px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	display: none;
+}
+.wsp-in > ul > li.active {
+	display: block;
+}
+
+
+/*----------------------------------------------------------------------------*/
+/*                                 EXTENSIONS                                 */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* auto height */
+/**/
+.wsp-in-height-auto > ul {
+	height: auto !important;
+}
+.wsp-in-height-auto > ul > li {
+	position: static;
+	display: none;
+	height: auto !important;
+}
+.wsp-in-height-auto > .wsp-content-first:checked ~ ul .wsp-content-first,
+.wsp-in-height-auto > .wsp-content-2:checked ~ ul .wsp-content-2,
+.wsp-in-height-auto > .wsp-content-3:checked ~ ul .wsp-content-3,
+.wsp-in-height-auto > .wsp-content-4:checked ~ ul .wsp-content-4,
+.wsp-in-height-auto > .wsp-content-5:checked ~ ul .wsp-content-5,
+.wsp-in-height-auto > .wsp-content-last:checked ~ ul .wsp-content-last {
+	display: block;
+}
+
+
+/**/
+/* grid */
+/**/
+.wsp-in .wsp-row {
+	margin-top: 20px;
+}
+.wsp-in .wsp-row:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.wsp-in .wsp-row:first-child {
+	margin-top: 0;
+}
+.wsp-in .wsp-col {
+	display: block;
+	float: left;
+	margin-left: 2%;
+}
+.wsp-in .wsp-col:first-child {
+	margin-left: 0;
+}
+.wsp-in .wsp-col .inner {
+	padding: 10px 0;
+	border-radius: 5px;
+	background: #f2f2f2;
+	text-align: center;
+}
+.wsp-in .wsp-col-1 {
+	width: 15%;
+}
+.wsp-in .wsp-col-2 {
+	width: 32%;
+}
+.wsp-in .wsp-col-3 {
+	width: 49%;
+}
+.wsp-in .wsp-col-4 {
+	width: 66%;
+}
+.wsp-in .wsp-col-5 {
+	width: 83%;
+}
+.wsp-in .wsp-col-offset-1 {
+	margin-left: 19%;
+}
+.wsp-in .wsp-col-offset-1:first-child  {
+	margin-left: 17%;
+}
+.wsp-in .wsp-col-offset-2 {
+	margin-left: 36%;
+}
+.wsp-in .wsp-col-offset-2:first-child {
+	margin-left: 34%;
+}
+.wsp-in .wsp-col-offset-3 {
+	margin-left: 53%;
+}
+.wsp-in .wsp-col-offset-3:first-child {
+	margin-left: 51%;
+}
+.wsp-in .wsp-col-offset-4 {
+	margin-left: 70%;
+}
+.wsp-in .wsp-col-offset-4:first-child {
+	margin-left: 68%;
+}
+.wsp-in .wsp-col-offset-5:first-child {
+	margin-left: 85%;
+}
+
+
+/**/
+/* typography */
+/**/
+.wsp-in .typography {
+	color: #666;
+}
+.wsp-in .typography h1,
+.wsp-in .typography h2,
+.wsp-in .typography h3,
+.wsp-in .typography h4,
+.wsp-in .typography h5,
+.wsp-in .typography h6 {
+	margin: 40px 0 0 0;
+	padding: 0;
+	text-align: left;
+	color: #333;
+}
+.wsp-in .typography h1 {
+	font-size: 40px;
+	line-height: 60px;
+	text-shadow: 3px 3px rgba(0,0,0,0.1);
+}
+.wsp-in .typography h2 {
+	font-size: 32px;
+	line-height: 48px;
+	text-shadow: 2px 2px rgba(0,0,0,0.1);
+}
+.wsp-in .typography h3 {
+	font-size: 26px;
+	line-height: 38px;
+	text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+.wsp-in .typography h4 {
+	font-size: 18px;
+	line-height: 30px;
+	padding-bottom: 5px;
+}
+.wsp-in .typography h5 {
+	font-size: 15px;
+	line-height: 23px;
+	text-transform: uppercase;
+}
+.wsp-in .typography h6 {
+	font-size: 13px;
+	line-height: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.wsp-in .typography p {
+	margin: 20px 0 0 0;
+	padding: 0;
+	line-height: 20px;
+	text-align: left;
+}
+.wsp-in .typography ul,
+.wsp-in .typography ol {
+	list-style: none;
+	margin: 20px 0 0 0;
+	padding: 0;
+}
+.wsp-in .typography li {
+	position: relative;
+	margin-top: 5px;
+	padding-left: 20px;
+}
+.wsp-in .typography li ul,
+.wsp-in .typography li ol {
+	margin-top: 5px;
+}
+.wsp-in .typography ul li:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: 0;
+	width: 6px;
+	height: 4px;
+	background: #404040;
+}
+.wsp-in .typography ol {
+	counter-reset: list1;
+}
+.wsp-in .typography ol > li:before {
+	counter-increment:list1;
+	content: counter(list1)'.';
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.wsp-in .typography a {
+	text-decoration: underline;
+	color: #1889e6;
+}
+.wsp-in .typography a:hover {
+	text-decoration: none;
+}
+.wsp-in .typography .pic {
+	padding: 4px;
+	border: 1px dotted #ccc;
+}
+.wsp-in .typography .pic img {
+	display: block;
+}
+.wsp-in .typography .pic-right {
+	float: right;
+	margin: 0 0 10px 20px;
+}
+.wsp-in .typography .link {
+	text-decoration: underline;
+	color: #1889e6;
+	cursor: pointer;
+}
+.wsp-in .typography .link:hover {
+	text-decoration: none;
+}
+.wsp-in .typography h1:first-child,
+.wsp-in .typography h2:first-child,
+.wsp-in .typography h3:first-child,
+.wsp-in .typography h4:first-child,
+.wsp-in .typography h5:first-child,
+.wsp-in .typography h6:first-child,
+.wsp-in .typography p:first-child {
+	margin-top: 0;
+}
+.wsp-in .typography .text-center {
+	text-align: center;
+}
+.wsp-in .typography .text-right {
+	text-align: right;
+}
+
+
+/**/
+/* steps */
+/**/
+.wsp-in-steps > label {
+	cursor: default;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*                                   LAYOUTS                                  */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* top right */
+/**/
+.wsp-in-layout-top-right {
+	text-align: right;
+}
+
+
+/**/
+/* top center */
+/**/
+.wsp-in-layout-top-center {
+	text-align: center;
+}
+
+
+/**/
+/* top combi */
+/**/
+.wsp-in > .right {
+	float: right;
+}
+
+
+
+
+
+/*----------------------------------------------------------------------------*/
+/*                               RESPONSIVENESS                               */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* pad */
+/**/
+@media screen and (max-width: 980px) {
+
+}
+
+
+/**/
+/* phone */
+/**/
+@media screen and (max-width: 767px) {
+	.wsp-in > label {
+		display: block;
+	}
+	.wsp-in > .right {
+		float: none;
+	}
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*                                   THEMES                                   */
+/*----------------------------------------------------------------------------*/
+
+/**/
+/* default */
+/**/
+.wsp-in > label {
+	padding: 0 20px;
+	background: #e5e5e5;
+	font-size: 16px;
+	line-height: 49px;
+}
+.wsp-in > label:hover {
+	background: #fff;
+}
+.wsp-in > input:checked + label {
+	background: #fff;
+}
+.wsp-in > ul {
+	background: #fff;
+	text-align: left;
+}
+.wsp-in-steps > label:hover {
+	background: #e5e5e5;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/*                               CUSTOMIZATION                                */
+/*----------------------------------------------------------------------------*/
+
+
+.wsp-table {
+	border-spacing: 0 25px;
+	font-size: 14px;
+}
+
+.wsp_field label {
+	padding-right: 20px;
+}
+
+.wsp_field label.sublabel {
+	font-size: 14px;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+.wsp-table input[type=text], .wsp-table textarea {
+	width: 230px;
+}
+
+.wsp-table note {
+	width: 100%;
+	display: block;
+	padding: 10px 0;
+	font-weight: normal;
+}
+.wrap.wsp-cover h2 {
+	margin-bottom: 15px;
+}
+.wsp-table .select2-container {
+	min-width: 170px;
+}
+.wsp_preview_tab {
+	float: left;
+}
+.wsp_preview {
+	border: 1px solid #ccc;
+	margin-top: 15px;
+}
+.wsp_preview_cover {
+	width: 100%;
+	padding: 25px;
+	background: #0e0e0e;
+	display: block;
+	margin-top: 20px;
+	box-sizing: border-box;
+}
+.wsp_preview_c {
+	width: 900px;
+	padding: 25px 0 0 0;
+	max-width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+	display: block;
+	clear: both;
+	margin: 20px auto;
+}
+.wsp_preview_c.wsp_preview_cc {
+	width: 430px;
+}
+.wsp_50 {
+	width: 50%;
+}
+.wsp_50.first {
+	padding-right: 15px;
+	border-right: 1px solid #ccc;
+}
+.wsp_50.last {
+	padding-left: 15px;
+}
+.wsp_preview input {
+	width: 100%;
+}
+.wsp_cho_title {
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+.wsp_cho_content {
+	display: flex;
+	padding: 10px;
+	text-align: left;
+}
+#wsp_cho_content {
+	margin-bottom: 15px;
+}
+#wsp_cho_content, #wsp_cho_content p, #wsp_cho_content li, #wsp_cho_content li a {
+	font-size: 15px;
+	line-height: 22px;
+}
+.wsp_c_content_cover {
+	flex-grow: 1;
+	margin-bottom: 18px;
+}
+.wsp_c_img_cover {
+	flex-shrink: 1;
+	margin-right: 18px;
+	position: relative;
+	width: 50%;
+	height: 100px;
+	display: inline-grid;
+}
+span.wsp_helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.wsp_cho_content img {
+	width: 150px;
+}
+.wsp_preview_cover label {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 24px 0 17px 0;
+	display: block;
+}
+.wsp_c_img_src {
+	max-width: 100%;
+	vertical-align: middle;
+	display: inline;
+	width: 100%;
+}
+#wsp_cho_title {
+	font-size: 16px;
+}
+.wsp_cho_price {
+	padding-top: 15px;
+	border-top: 1px solid #ccc;
+}
+.wsp_cho_content textarea {
+	width: 100%;
+	margin-bottom: 10px;
+}
+.wsp_cho_price span {
+	font-weight: bold;
+}
+.wsp_hidden {
+	display: none;
+}
+.wsp_c_img_edit {
+	position: absolute;
+	color: #fff;
+	background: #00b900;
+	width: 30px;
+	height: 26px;
+	padding-top: 4px;
+	margin: 0 auto;
+	left: 48%;
+	right: auto;
+	top: 48%;
+	cursor: pointer;
+}
+.wsp_h3 {
+	padding-left: 10px;
+}
+.button.button-on-product {
+	margin-top: 10px;
+	float: right;
+}
+.fixed .column-wsp-sort {
+	width: 50px;
+}
